@@ -1,0 +1,52 @@
+.MainContent{
+  border: 2px solid black;
+  width: 100vw;
+  height: 100vh;
+  background-color: #8EC5FC;
+background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
+}
+.main{
+    /* border: 2px solid black;
+    width: 77.6vw;
+    display: flex;
+    margin-left: 22rem;
+    position: fixed;
+    top: 0;*/
+  width: 70%;
+  height: 80vh;
+  margin-left: 26rem;
+  margin-top: 0.5rem;
+  position: fixed;
+
+}
+.mainNote{
+   margin-left: 2rem;
+
+}
+
+.mainNote input,
+textarea {
+  display: block;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  width: 100%;
+  height: calc(50vh - 130px);
+  padding: 10px;
+  resize: none;
+  font-size: inherit;
+  font-family: inherit;
+  box-shadow: 0 0 5px;
+}
+.mainNote input {
+  height: 50px;
+  font-size: 2rem;
+}
+.notePreview{
+  margin-left: 2rem;
+}
+.noActiveNote{
+  text-align: center;
+  font-weight: 900;
+  font-size: xx-large;
+}
