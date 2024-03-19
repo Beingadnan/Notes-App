@@ -5,7 +5,9 @@ import SideBar from "./components/SideBar";
 import uuid from "react-uuid";
 
 function App() {
-  const [notes, setNotes] = useState(localStorage.notes ? JSON.parse(localStorage.notes) : []);
+  const [notes, setNotes] = useState(
+    localStorage.notes ? JSON.parse(localStorage.notes) : []
+  );
   const [activeNote, setActiveNote] = useState(false);
 
   useEffect(() => {
@@ -17,7 +19,6 @@ function App() {
       id: uuid(),
       title: "Untitled Notes",
       body: "",
-      lastModified: Date.now(),
     };
     setNotes([newNote, ...notes]);
     setActiveNote(newNote.id);
@@ -38,7 +39,6 @@ function App() {
   };
 
   const onSaveNote = () => {
-    // Implement the save functionality here
     console.log("Save function triggered");
   };
 
@@ -48,8 +48,18 @@ function App() {
 
   return (
     <div className="App">
-      <SideBar notes={notes} onAddNotes={onAddNotes} onDelete={onDelete} activeNote={activeNote} setActiveNote={setActiveNote} />
-      <MainContent activeNote={getActiveNote()} onUpdateNote={onUpdateNotes} onSaveNote={onSaveNote} />
+      <SideBar
+        notes={notes}
+        onAddNotes={onAddNotes}
+        onDelete={onDelete}
+        activeNote={activeNote}
+        setActiveNote={setActiveNote}
+      />
+      <MainContent
+        activeNote={getActiveNote()}
+        onUpdateNote={onUpdateNotes}
+        onSaveNote={onSaveNote}
+      />
     </div>
   );
 }
